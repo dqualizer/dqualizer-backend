@@ -1,21 +1,7 @@
 [[section-introduction-and-goals]]
 ==	Einführung und Ziele
 
-Die implementierte Softwarearchitektur des Demosystem für die
-Subdomäne Werkstatt hat das Ziel, die in der Schulung vermittelte
-Konzepte von Domain-driven Design zu verdeutlichen.
-
-Der Schwerpunkt der Demo liegt auf:
-
-* der beispielhafte Anwendung der Building Blocks des taktischen Domain-driven Design,
-* im Architekturmuster Hexagonal Architecture sowie der
-* im Architekturmuster Clean Architecture
-
-Die hier vorgestellten Lösungen stellen einen mögliche, praxisnahe und bewährte Wege zur Abbildung dieser
-Architekturmuster Ebene von Paketen und Klassen in der Programmiersprache Java.
-
-Die Demo hat nicht den Anspruch "lauffähig" zu sein. Momentan sind die wichtigsten Konzepte auf struktureller Ebene
-tiefgehend aabgebildet. Ein stetiger Ausbau der Demo ist angedacht.
+TODO describe dqualizer
 
 === Aufgabenstellung
 
