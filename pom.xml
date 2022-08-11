@@ -5,11 +5,14 @@
     <groupId>de.novatec.dqualizer</groupId>
     <artifactId>dqualizer-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>dqualizer-backend</name>
+    <description>Backend of dqualizer</description>
 
     <properties>
         <spring-boot.version>2.7.2</spring-boot.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <kotlin.version>1.7.20-Beta</kotlin.version>
     </properties>
 
     <dependencyManagement>
@@ -26,6 +29,14 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-reflect</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
@@ -39,6 +50,7 @@
             <artifactId>jmolecules-cqrs-architecture</artifactId>
             <version>1.4.0</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -53,6 +65,7 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -61,7 +74,24 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.tngtech.archunit</groupId>
@@ -71,6 +101,8 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -78,6 +110,19 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <layout>ZIP</layout>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                    <classifier>${repackage.classifier}</classifier>
+                    <image>
+                        <builder>paketobuildpacks/builder:tiny</builder>
+                        <env>
+                            <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+                        </env>
+                    </image>
                 </configuration>
                 <executions>
                     <execution>
@@ -94,6 +139,25 @@
                     <source>11</source>
                     <target>11</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <configuration>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                    </args>
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
