@@ -3,7 +3,7 @@ name: Research request
 about: Suggest a research request for this project
 title: "[Research] - *ENTER TITLE* "
 labels: research
-assignees: heiko-holz
+assignees: ''
 
 ---
 
