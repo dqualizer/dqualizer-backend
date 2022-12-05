@@ -6,6 +6,12 @@ Siehe https://docs.arc42.org/section-10/[Qualitätsanforderungen] in der online-
 
 === Qualitätsbaum
 
+Was ist ein Qualitätsbaum?  Im dqualizer Kontext ?
+
 === Qualitätsszenarien
+
+Was ist ein Qualitätsszenario? Im dqualizer Kontext ?
+
+
 
 
