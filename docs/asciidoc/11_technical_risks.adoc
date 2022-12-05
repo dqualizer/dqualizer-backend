@@ -1,5 +1,7 @@
 [[section-technical-risks]]
 == Risiken und technische Schulden
 
+Notiz: Evtl. lassen sich techn. Risiken aus dem Projektvorhaben ableiten. Angesprochen wird u.a. das Scheitern durch Komplexität 
+der Aufgabe (hinsichtliche nicht eingehaltener Deadlines). 
 
-
+Technische Schulden sei hier verstanden als die gebräuchliche Metapher für die möglichen Konsequenzen schlechter technischer Umsetzung von Software. Das Aufschieben von Maßnahmen zur Sicherung und Erhöhung technischer Qualität (sprich technische Schulden) in Softwareprojekten beschleunigt die Softwareentwicklung nicht, sondern verlangsamt und erschwert diese. 
