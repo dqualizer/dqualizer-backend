@@ -12,7 +12,9 @@ das Ziel, diese Kluft zwischen der Fachlichkeit der Anwendungssysteme und den (t
 und Erkenntnissen der Qualitätssicherung durch einen domänenzentrierten Ansatz zu schließen.
 
 Hierzu sollen Möglichkeiten zur Modellierung und Überwachung von Belangen der Laufzeitqualität in DDD-basierte
-Techniken integriert werden. Aus fachlicher Perspektive lassen sich durch dqualizer automatisiert aussagekräftige Last- und Resilienztests erzeugen und interpretieren sowie die Verbindungen zum technischen
+Techniken integriert werden. 
+
+Aus fachlicher Perspektive lassen sich durch dqualizer automatisiert aussagekräftige Last- und Resilienztests erzeugen und interpretieren sowie die Verbindungen zum technischen
 Monitoring herstellen.
 
 Die entwickelten innovativen Konzepte sollen in einem Open-Source-Werkzeug umgesetzt
@@ -41,7 +43,8 @@ Dieser Abschnitt untermalt die Qualitätsziele der Architektur des dqualizer Pro
 
 === 1.3. Stakeholder
 
-//Kommentar: Assoziierte Anwendungs- und Transferpartner. Die DATEV eG und die VHV solutions GmbH.
+//Kommentar: Recherche der assoziierten Anwendungs- und Transferpartner wie u.a. die DATEV eG, die VHV solutions GmbH und die HITeC (Hamburger Informatik Technologie-Center e.V.)
+
 Es folgt eine Übersicht über die wichtigsten Stakeholder mit deren Erwartungen bezüglich der Architektur. Die Stakeholder sind dabei einem Workshop Miro Board.footnote:[https://miro.com/app/board/uXjVOAAmeeo=/] entnommen.
 
 
