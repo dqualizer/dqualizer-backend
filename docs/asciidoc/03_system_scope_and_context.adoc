@@ -1,5 +1,19 @@
 [[section-system-scope-and-context]]
-== (System-) Kontextabgrenzung
+
+== Fachlicher Kontext
+
+Dieses Kapitel behandelt eine Repräsentation des Systemkontextes. Evtl. ein Systemkontextdiagram ähnlich wie in SysML hier einfügen um den fachlichen Kontext zu illustrieren.
+
+
+== Technischer oder Verteilungskontext
+
+Example via https://docs.arc42.org/examples/technical-context-1/#32-technical-context.
+
+The following diagram shows e.g. the participating computers (nodes) with their technical connections plus the major artifacts etc.
+
+MES-Beispiel (System-) Kontextabgrenzung:
+
+Das Miroboard enthält eine Abbildung bezüglich der Systemkontextsicht. Diese evtl. hier mittels PlantUML einfügen.
 
 Das folgende Diagramm zeigt das Softwaresystem Werkstatt und seinen Systemkontext bestehend aus den Nutzern des Softwaresystems, der eigenen Datenbank und Nachbarsysteme names Mitarbeiter und Originalteile.
 
@@ -27,11 +41,9 @@ Orignalteile -- Werkstatt
 
 ....
 
-Die Subdomäne Werkstatt wird als modularer Monolith realisiert.
-Die Bausteinsicht dokumentiert die Dekomposition des Monolithen anhand von Bounded Contexts und Aggregates.
 
-== Context Map Autohaus
+Context Map Beispiel:
 
-Die Context Map zeigt die Bounded Contexts des Autohaus und gibt einen Überblick über die gesamte Domäne Autohaus und setzt die Subdomäne Werkstatt mit den Bounded Contexts Werkstattplanung und Werkstattservice in das sozio-technische Gesamtbild.
+Die Context Map zeigt die Bounded Contexts des Autohauses und gibt einen Überblick über die gesamte Domäne Autohaus und setzt die Subdomäne Werkstatt mit den Bounded Contexts Werkstattplanung und Werkstattservice in das sozio-technische Gesamtbild.
 
 image::../images/big_picture_context_map.png[]
