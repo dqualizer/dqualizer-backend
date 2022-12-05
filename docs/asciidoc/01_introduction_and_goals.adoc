@@ -1,80 +1,68 @@
 [[section-introduction-and-goals]]
 ==	Einführung und Ziele
 
-TODO describe dqualizer
+Dieses Kapitel ist unterteilt in eine kurze Beschreibung und Extrakt der Requirements im Abschnitt <<Aufgabenstellung>>, sowie einer Aufzählung der relevantesten Qualitätsziele für die Architektur in <<Qualitätsziele>>, deren Erreichung für die wichtigsten Stakeholder kritisch ist. Zuletzt erfolgt in <<Stakeholder>> eine Übersicht über die wichtigsten Stakeholder mit deren Erwartungen bezüglich der Architektur.
 
-=== Aufgabenstellung
+=== 1.1. Aufgabenstellung (Requirements Overview)
 
-Die Demo zeigt die Subdomäne Werkstatt mit den Bounded Contexts Werkstattplanung und Werkstattservice.
-Der Bounded Context Werkstattplanung enthält die Aggregates Werkstattplan und Werkstattauftrag.
-Der Bounded Context Werkstattservice enthält die Aggregates Werkstattservice und WerkstattserviceGruppe.
+Um die Aufgabenstellung für dqualizer zu erläutern wird im Folgenden die Vorhabenskurzbeschreibung footnote:[Dokument: "Domänenzentrierte Laufzeitqualitätsanalyse geschäftskritischer Anwendungssysteme"] zitiert:
 
-Die Demo-Basisversion bildet anhand dieser Beispiele,
+"Das Forschungsvorhaben dqualizer der Novatec Consulting GmbH und der Universität Hamburg hat
+das Ziel, diese Kluft zwischen der Fachlichkeit der Anwendungssysteme und den (technischen) Maßnahmen
+und Erkenntnissen der Qualitätssicherung durch einen domänenzentrierten Ansatz zu schließen.
 
-* die Verwendung von Bounded Contexts und Aggregates zur Modularisierung von Softwaresystemen
-* die Anwendung des taktischen Domain-driven Design mit starken Fokus auf Aggregate, Entity und Value Objects
-* der Umgang mit den Herausforderungen Eventual Consistency und Causal Consistency.
+Hierzu sollen Möglichkeiten zur Modellierung und Überwachung von Belangen der Laufzeitqualität in DDD-basierte
+Techniken integriert werden. Aus fachlicher Perspektive lassen sich durch dqualizer automatisiert aussagekräftige Last- und Resilienztests erzeugen und interpretieren sowie die Verbindungen zum technischen
+Monitoring herstellen.
 
-[.lead]
-Die Demo realisiert in der Variante Hexagonal Architecture
+Die entwickelten innovativen Konzepte sollen in einem Open-Source-Werkzeug umgesetzt
+und in Anbindung an existierende Werkzeuge verfügbar und nutzbar gemacht werden."
 
-* ein Domämenmodell mit Daten und Verhalten (rich domain model),
-* einen Application Service für das Handling von Eventual und Causal Consistency sowie
-* für die Implementierung von Input Ports bzw. die Nutzung von Output Ports und
-* ein native implementiertes Mapping gemäß der Two-Way Mapping Strategie (Bounded Context Werkstattplanung) ab
-* (https:/www.google.de[Package Hexagonal Architecture Bounded Context Werkstattplanung])
+=== 1.2. Qualitätsziele (Quality goals)
 
-[.lead]
-In der Variante Clean Architecture wird
-
-* ein Domämenmodell mit Daten und Verhalten (rich domain model),
-* ein (Domain)Services für die Implementierung eingehenden Use Cases und für die Nutzung von ausgehenden Use Cases,
-* einen Event-getriebenen Ansatz zum Handling von Eventual und Causal Consistency sowie
-* ein native implementiertes Mapping gemäß der Two-Way Mapping Strategie (Bounded Context Werkstattplanung) ab
-* https:/www.google.de[Package Clean Architecture Bounded Context Werkstattplanung]
-
-=== Qualitätsziele
+Dieser Abschnitt untermalt die Qualitätsziele der Architektur des dqualizer Projektvorhabens. Hierzu wird auf das Kapitel "1.3 Wissenschaftliche und/oder technische Arbeitsziele des Vorhabens" verwiesen.
 
 [cols="1,2" options="header"]
 |===
 |Qualitätsziel |Beschreibung
 
-|Unterstützung die:der Teilnehmer:in beim Erlenen der Konzepte des taktischen Domain-driven Design
-|Der Teilnehmer wird durch konkrete Beispiele aller relevante Aspekte dabei unterstützt, die DD Buildung Blocks zu
-erlernen und im eigenen Projektkontext anzuwenden.
+|Qualitätsziel 1 formuliert
+|Qualitätsziel 1 formuliert als Text
 
-|Konzeptionelle Integrität verstehen und anwenden
-|Es gibt nicht den einen Weg! Alternative Ansätze zu verstehen und voneinander abzugrenzen,
-sichert konzeptionelle Integrität. Begriffe, Lösungsstrategien und Architekturkonzepte sind oft schwammig definiert
-Application Service vs. Domain Service, Rich vs. Anemic Domain Model sind Beispiel hierfür.
-In einer Anwendungsarchitektur ist ein klarer Weg zu definieren und gleichartig zu reaisieren-.
-Durch die verschiedenen Varianten, kann der:die Teilnehmer:in verschiedene Ansätze vergleichen und bewerten.
+|Qualitätsziel 2 formuliert
+|Qualitätsziel 2 formuliert als Text
 
+
+|Qualitätsziel 3 formuliert
+|Qualitätsziel 3 formuliert als Text
 
 |===
 
-=== Ein Wort zum Stand und zu weiteren Plänen
 
-Der Plan ist die Demo sukzessive auszubauen.
-Konkret bedeutet dies:
+=== 1.3. Stakeholder
 
-* Lauffähigkeit des Bounded Context Werkstattplan herstellen
-* Fortgeschrittene Konzepte der Invariantenprüfung anwenden und beschreiben darstellen
-* Fortgeschrittene Anwendungsfälle für Domain bzw. Application Services darstellen
-* Detaillierte Beschreibung Klassen-Stereotypen der Hexagonal und Clean Architecture
+//Kommentar: Assoziierte Anwendungs- und Transferpartner. Die DATEV eG und die VHV solutions GmbH.
+Es folgt eine Übersicht über die wichtigsten Stakeholder mit deren Erwartungen bezüglich der Architektur. Die Stakeholder sind dabei einem Workshop Miro Board.footnote:[https://miro.com/app/board/uXjVOAAmeeo=/] entnommen.
 
-=== Stakeholder
 
-[cols="1,1,2" options="header"]
+Es erfolgt eine Übersicht über fachliche und (IT-) technische Stakeholder, sowie eine Beschreibung der jeweiligen Erwartungshaltung.
+
+[cols="1,2" options="header"]
 |===
-|Rolle |Kontakt |Erwartungshaltung
-|Teilnehmer der DDD Schulung|  |Vertiefung der Prinzipien und
-Muster von Domain-driven Design anhand der fachlichen Schulungbeispiele.
-|Trainer der DDD Schulung | mailto:matthias.eschhold@novatec-gmbh.de[Matthias Eschhold] |
+|Rolle |Erwartungshaltung
+|Manager | Als Manager möchte ich wissen welche Auswirkungen sich eine ändernde Kundenanzahl auf IT Ressourcen hat, um die Kosten besser abschätzen zu können.
+|Fach Product Owner | Als Fach Product Owner möchte ich mit wenig Aufwand die Qualitätsanforderungen des Fachexperten erfassen und bewerten.
+|Fachexperte | Als Fachexperte möchte ich Qualitätsanforderungen und -szenarien anhand meiner modellierten Prozesse definieren.
 |===
 
-=== Weiterführende Quellen, Repositories, Artikel, Blogs oder Videos
 
-* https://github.com/MatthiasEschhold/clean-architecture-and-flexibility-patterns[Artikelserie Flexibile Anwendungsarchitektur mit der Clean Architecture]
-* https://github.com/lwluc/camunda-ddd-and-clean-architecture[Camunda DDD und Clean Architecture]
-* https://github.com/domain-primitives/domain-primitives-java[Domain Primitives Java]
+[cols="1,2" options="header"]
+|===
+|Rolle |Erwartungshaltung
+| DevOps-Fachkraft | Als ...
+| Operations-Fachkraft | Als ...
+| Development-Fachkraft | Als ...
+| Software Architekt | Als ...
+| Fachlicher Tester | Als ...
+|===
+
