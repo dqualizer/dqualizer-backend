@@ -1,6 +1,24 @@
 [[section-building-block-view]]
 == Bausteinsicht
 
+= Ebene 1
+
+Siehe Miro Board->Bausteinsicht Ebene 1 Iteration 2-> in PlantUML
+
+= Ebene 2
+
+Notizen von mbe:
+
+IMPORTANT: Die vollständige Abbildung der fachlichen Module ergibt
+sich durch die Paketstruktur in der Hexagonal bzw. Clean Architecture.
+Hier liegt der Fokus auf dem Domänenmodell abgebildet anhand
+von Aggregates, Entites und Value Objects.
+
+Aufbauend auf der Context Map aus dem Kapitel Systemkontextsicht, wird im folgenden die Subdomäne Werkstatt beschrieben.
+
+
+
+
 IMPORTANT: Die vollständige Abbildung der fachlichen Module ergibt
 sich durch die Paketstruktur in der Hexagonal bzw. Clean Architecture.
 Hier liegt der Fokus auf dem Domänenmodell abgebildet anhand
