@@ -5,9 +5,12 @@
 |===
 |Begriff |Definition
 
-|<Begriff-1>
-|<Definition-1>
+|Stress Testing
+|Stress testing exercises software at the maximum
+design load, as well as beyond it, with the goal
+of determining the behavioral limits, and to test
+defense mechanisms in critical systems. (vgl. SWEBOK-V3)
 
-|<Begriff-2
+|Begriff 2
 |<Definition-2>
 |===
