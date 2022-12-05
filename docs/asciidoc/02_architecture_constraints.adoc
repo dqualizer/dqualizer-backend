@@ -1,4 +1,23 @@
-[[section-architecture-constraints]]
-== Randbedingungen
+=== Technische Randbedingungen
+
+Dieser Abschnitt wird dem dqualizer Projektvorhaben entnommen.
+
+Der Durchstich-Workshop bzw. Workshop Reihe soll u.a. diese Fragestellung klären:
+Was sind die techn. Randbedingungen (hinsichtlich der Architektur)?
 
 
+=== Organisatorische Randbedingungen
+
+Die Aufgabenstellung wird dem dqualizer Projektvorhaben entnommen.
+
+Der Durchstich-Workshop bzw. Workshop Reihe soll diese Fragestellung klären:
+Was sind die organisatorischen Randbedingungen?
+
+Hier erfolgt eventuell ein Verweis auf die Stakeholder aus Kapitel 1 hinsichtlich der organisatorischen Randbedingungen?
+
+=== Konventionen
+
+Definition Konvention einfügen.
+
+Der Durchstich-Workshop bzw. Workshop Reihe soll diese Fragestellung klären:
+Was sind (weitere) Konventionen, welche beachtet werden sollen oder müssen?
