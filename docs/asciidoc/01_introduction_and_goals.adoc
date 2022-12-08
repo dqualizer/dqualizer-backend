@@ -17,6 +17,8 @@ Techniken integriert werden. Aus fachlicher Perspektive lassen sich durch dquali
 Die entwickelten innovativen Konzepte sollen in einem Open-Source-Werkzeug umgesetzt
 und in Anbindung an existierende Werkzeuge verfügbar und nutzbar gemacht werden."
 
+User Stories als gelbe Zettel auf Miro: https://miro.com/app/board/uXjVP_qJ4rU=/
+
 === 1.2. Qualitätsziele (Quality goals)
 
 Dieser Abschnitt erläutert die Qualitätsziele der Architektur des dqualizer Projektvorhabens.
