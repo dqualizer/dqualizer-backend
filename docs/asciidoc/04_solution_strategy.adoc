@@ -1,214 +1,34 @@
 [[section-solution-strategy]]
 == Lösungsstrategie
 
-IMPORTANT: Die Bennung von Package mit "." dient zur Vereinfachung des Diagramms. Durch den Punkt
-wird ein Subpackage ausgedrückt ("package.subpackage").
+Dieses Kapitel dient als Zusammenfassung der fundamentalen Entwurfsentscheidungen und Lösungsstrategien für die Gesamtarchitektur. Es kann Technologieentscheidungen, Top-Level-Zerlegungsstrategie oder Ansätze zur Erreichung der wesentlichen Qualitätsziele beinhalten, bzw. relevante Organisationsentscheidungen.
 
-NOTE: Die Ansätze für Klassen-Stereotypen werden in der Zukunft detallierter bechrieben.
-Hinsichtlich der Clean Architecture wird für mehr Details auf die https://github.com/MatthiasEschhold/clean-architecture-and-flexibility-patterns[Artikelserie Flexibile Anwendungsarchitektur mit der Clean Architecture]
-verwiesen.
+Eine kurze Zusammenfassung und Erläuterung der grundlegenden Entscheidungen und Lösungsstrategien, die die Architektur des Systems bestimmen. Dazu gehören technologische Entscheidungen wie:
 
-=== Die Paketstruktur in der hexagonale Architektur
+* Entscheidungen über die Top-Level-Zerlegung des Systems, z. B. Verwendung eines Architekturmusters oder Entwurfsmusters
+* Entscheidungen darüber, wie wichtige Qualitätsziele erreicht werden können
+* relevante organisatorische Entscheidungen, z. B. die Wahl eines Entwicklungsprozesses oder die Delegation bestimmter Aufgaben an Dritte.
 
-Das folgende Diagramm zeigt die Paketstrukturierung eines Bounded Context mit der Hexagonal Architecture.
-Die Architektur wird ausdrucksstark abgebildet.
-Dies ist sichtbar anhand der der Unterscheidung "in" und "out" innerhalb des Adapter- bzw.
-Port-Package.
+Motivation: Diese Entscheidungen bilden die Eckpfeiler für Ihre Architektur. Sie bilden die Grundlage für viele andere Detailentscheidungen oder Implementierungsregeln.
 
-[plantuml,target=package-hexagonal-architecture,format=png]
-....
+Form: Fassen Sie sich bei der Erläuterung dieser Schlüssel-Entscheidungen kurz.
 
-package "bounded context" as dc {
-
-    package adapter.in
-    package adapter.out
-
-    package "application" as app {
-
-        package port.in
-        package port.out
-
-        package "domain" as domain {
-            package "aggregate" as aggDomain1 {
-                package service
-                package model
-                service --> model
-            }
-        }
-
-        package applicationservice
-    }
+Begründen Sie, was Sie entschieden haben und warum Sie sich so entschieden haben,
+basierend auf Ihrer Problemstellung, den Qualitätszielen und den wichtigsten Einschränkungen. Verweisen Sie auf Einzelheiten in den folgenden Abschnitten.
 
 
-    port.out <|-- adapter.out
+// |===
+// |Column 1 |Column 2 |Column 3 | Column 4
+//|Cell in column 1, row 2 |Cell in column 2, row 2 |Cell in column 3, row 2 | Cell in column 4
+//|===
 
-    port.in <|-- applicationservice
+[options="header"]
+|===
+|Qualitätsziel |Szenario |Lösungsansatz |Link zu Details
 
-    applicationservice --> port.out
+|<Text> |<Text> |<Text> |<Text>
 
-    adapter.in --> port.in
-    applicationservice --> service
-}
-....
+|<Text> |<Text> |<Text> |<Text>
 
-=== Klassen-Stereotypen in der Hexagonal Architecture
+|===
 
-Folgendes Modell zeigt die Klassen-Stereotypen in der hexagonalen Architektur.
-Die Grundlage sind die Building Blocks des taktischen Domain-driven Design.
-Eingehend sind die Web Adapter Controller und EventListener dargestellt.
-Als Beispiel für ausgehende Adapter, wird die Anbindung einer Datenbank durch den Klassen-Stereotyp Repository dargestellt.
-
-[plantuml,target=class-stereotyes-hexagonal-architeture,format=png]
-....
-
-class Controller
-class Resource
-class "Mapper" as resourceMapper
-Controller --> Resource
-Controller --> resourceMapper
-resourceMapper --> Resource
-
-class EventListener
-class Event
-class "Mapper" as eventMapper
-EventListener --> Event
-eventMapper --> Event
-EventListener --> eventMapper
-
-interface InputPort <<port>>
-interface OutputPort <<port>>
-
-class ApplicationService
-class Aggregate
-class Entity
-class ValueObject
-class Factory
-class DomainService
-
-class Repository
-class DbEntity
-class "Mapper" as dbEntityMapper
-Repository --> DbEntity
-dbEntityMapper --> DbEntity
-Repository --> dbEntityMapper
-
-Aggregate --> Entity
-Aggregate --> ValueObject
-Entity --> ValueObject
-DomainService --> Aggregate
-DomainService --> Factory
-ApplicationService --> DomainService
-ApplicationService --> Aggregate
-ApplicationService --> Factory
-Factory --> Aggregate
-ApplicationService --> OutputPort
-
-InputPort <|-- ApplicationService
-Controller  --> InputPort
-EventListener --> InputPort
-OutputPort <|-- Repository
-
-dbEntityMapper --> Aggregate
-resourceMapper --> Aggregate
-eventMapper  --> Aggregate
-....
-
-=== Die Paketstruktur in der Clean Architecture
-
-Das folgende Diagramm zeigt die Paketstrukturierung eines Bounded Context gemäß der Clean Architecture.
-Die Architektur wird ausdrucksstark abgebildet.
-Dies ist sichtbar anhand der der Unterscheidung "in" und "out" innerhalb
-des Adapter- bzw. UseCase-Package.
-
-[plantuml,target=clean-architecture-packages,format=png]
-....
-
-package "bounded context" as dc {
-
-    package "aggregate" as aggregateOne {
-
-        package adapter.in
-        package adapter.out
-
-        package usecase.in
-        package usecase.out
-
-        package "domain" as domain {
-            package service
-            package model
-        }
-
-        service --> model
-        usecase.in <|-- service
-        service -->  usecase.out
-
-        adapter.in --> usecase.in
-        usecase.out <|-- adapter.out
-    }
-}
-....
-
-=== Klassen-Stereotypen in der Clean Architecture
-
-Folgendes Modell zeigt die Klassen-Stereotypen in der Clean Architecture.
-Die Grundlage sind die Building Blocks des taktischen Domain-driven Design.
-Eingehend sind die Web Adapter Controller und EventListener dargestellt.
-Als Beispiel für ausgehende Adapter, wird die Anbindung einer Datenbank
-durch den Klassen-Stereotyp Repository dargestellt.
-
-[plantuml,target=stereoyteps-clean-architeccture,format=png]
-....
-
-class Controller
-class Resource
-class "Mapper" as resourceMapper
-Controller --> Resource
-Controller --> resourceMapper
-resourceMapper --> Resource
-
-class EventListener
-class Event
-class "Mapper" as eventMapper
-EventListener --> Event
-eventMapper --> Event
-EventListener --> eventMapper
-
-interface "UseCase" as InputPort <<input port>>
-interface "UseCase" as OutputPort <<output port>>
-
-class Aggregate
-class Entity
-class ValueObject
-class Factory
-class DomainService
-
-class Repository
-class DbEntity
-class "Mapper" as dbEntityMapper
-Repository --> DbEntity
-dbEntityMapper --> DbEntity
-Repository --> dbEntityMapper
-
-Aggregate --> Entity
-Aggregate --> ValueObject
-Entity --> ValueObject
-DomainService --> Aggregate
-DomainService --> Aggregate
-DomainService --> Factory
-Factory --> Aggregate
-DomainService --> OutputPort
-
-InputPort <|-- DomainService
-Controller  --> InputPort
-EventListener --> InputPort
-OutputPort <|-- Repository
-
-dbEntityMapper --> Aggregate
-resourceMapper --> Aggregate
-eventMapper  --> Aggregate
-....
-
-=== Verwendung von Domain Primitives
-
-NOTE: Für die Realisierung der Invariantenprüfung wird in der Ausbaustufe der Demo die Library https://github.com/domain-primitives/domain-primitives-java[Domain Primitives Java]
-eingesetzt. Die Library unterstützt  Implementierung von Validierungsprüfungen zu verschlanken.
