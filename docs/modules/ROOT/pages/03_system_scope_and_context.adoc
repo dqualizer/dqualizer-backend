@@ -61,4 +61,4 @@ Context Map Beispiel:
 
 Die Context Map zeigt die Bounded Contexts des Autohauses und gibt einen Überblick über die gesamte Domäne Autohaus und setzt die Subdomäne Werkstatt mit den Bounded Contexts Werkstattplanung und Werkstattservice in das sozio-technische Gesamtbild.
 
-image::big_picture_context_map.png[]
+image::/big_picture_context_map.png[]
