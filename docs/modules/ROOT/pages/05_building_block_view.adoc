@@ -1,11 +1,11 @@
 [[section-building-block-view]]
 == Bausteinsicht
 
-= Ebene 1
+=== Ebene 1
 
 Siehe Miro Board->Bausteinsicht Ebene 1 Iteration 2-> in PlantUML
 
-= Ebene 2
+=== Ebene 2
 
 Notizen von mbe:
 

@@ -1,6 +1,6 @@
 [[section-system-scope-and-context]]
 
-= Kontextabgrenzung
+== Kontextabgrenzung
 
 Der Umfang und Kontext des Systems (engl. System Scope and Context)  grenzt ein System ab. Diese Abgrenzung bezieht sich auf die Kommunikationspartner des Systems, d.h. Nachbarsysteme und Benutzer. Der Scope legt damit die externen Schnittstellen fest.
 
