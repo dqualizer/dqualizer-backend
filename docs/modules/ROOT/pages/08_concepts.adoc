@@ -39,8 +39,16 @@ _<Erklärung>_
 
 === Fachliche Struktur und Modelle
 
+Lorem Ipsum
+
 === Architektur- und Entwurfsmuster
+
+Lorem Ipsum
 
 === Unter-der-Haube
 
+Lorem Ipsum
+
 === User Experience
+
+Lorem Ipsum

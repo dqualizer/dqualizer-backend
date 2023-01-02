@@ -8,6 +8,6 @@
   },
   "scripts": {
     "build": "npx antora antora-playbook.yml",
-    "preview": "http-server build/site -c-1"
+    "preview": "npx antora antora-playbook.yml && http-server build/site -c-1"
   }
 }

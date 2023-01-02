@@ -2,4 +2,4 @@ name: docs
 title: docs
 version: 1
 nav:
-  - modules/ROOT/nav.adoc
+  - docs/modules/ROOT/nav.adoc
